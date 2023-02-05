@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+.container {
+  @include flexbox-config(
+    $flex-direction: column,
+    $align-items: center,
+    $justify-content: center
+  );
+  background-image: url('../../public/assets/home/background-home-mobile.jpg');
+}
+@include xs-tablets {
+  background-image: url('../../public/assets/home/background-home-tablet.jpg');
+}
+@include sm-desktop {
+  background-image: url('../../public/assets/home/background-home-desktop.jpg');
+}
+.exploreBtn {
+  margin-top: 3rem;
+  padding: 2rem;
+  width: 150px;
+  height: 150px;
+  color: $black;
+}

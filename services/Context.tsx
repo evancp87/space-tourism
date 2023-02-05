@@ -1,17 +1,16 @@
-import React, { createContext, useState, useEffect } from "react";
-
+import React, { createContext, Dispatch, useState, useEffect, SetStateAction } from "react";
 
 interface DefaultData {
   data: Object;
-  setData: () => void;
+  setData: Dispatch<SetStateAction<{}>>;
   planets: Array<string> | undefined;
-  setPlanets: () => void;
+  setPlanets: Dispatch<SetStateAction<string[] | undefined>>;
   currPlanet: string;
-  setCurrPlanet: () => void;
+  setCurrPlanet: Dispatch<SetStateAction<string>>;
   crew: string;
-  setCrew: () => void;
+  setCrew: Dispatch<SetStateAction<string>>;
   technology: string;
-  setTechnology: () => void;
+  setTechnology: Dispatch<SetStateAction<string>>;
 }
 const SpaceContext = createContext<DefaultData>({
   data: {},
@@ -37,7 +36,7 @@ type ContextProps = {
 
 const PlanetProvider = ({ children }: ContextProps) => {
 const [data, setData] = useState({})
-const [planets, setPlanets] = useState([])
+const [planets, setPlanets] = useState<string[] | undefined>([]);
 const [crew, setCrew] = useState("Douglas Hurley")
 const [technology, setTechnology] = useState("Launch Vehicle")
 const [currPlanet, setCurrPlanet] = useState<string>("Moon")

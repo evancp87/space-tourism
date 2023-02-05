@@ -1,0 +1,78 @@
+@use '../abstracts/' as *;
+
+.nav {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  background-color: transparent;
+  @include flexbox-config(
+    $justify-content: space-between,
+    $align-items: center
+  );
+
+  .hamburgerContainer {
+    margin: 0 1rem;
+    @include xs-tablets {
+      display: none;
+    }
+
+    .closeMenu {
+      display: none;
+    }
+
+    .hamburger {
+      @include xs-tablets {
+        display: none;
+      }
+    }
+  }
+}
+
+.logo {
+  margin: 0 1rem;
+  max-width: 48px;
+  height: 48px;
+  @include xs-tablets {
+    width: 48px;
+  }
+}
+
+.navList {
+  display: none;
+  position: absolute;
+  right: -100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(100vw - 40%);
+  min-height: 100vh;
+  @include flexbox-config(
+    $flex-direction: column,
+    $justify-content: center,
+    $align-items: center
+  );
+  @include xs-tablets {
+    position: relative;
+    width: calc(100vw - 40%);
+    height: 100%;
+    display: block;
+    padding: 0 10rem;
+    @include xs-tablets {
+      // background-color: $nav-bg;
+      // background-color: #0b0d17;
+      background: rgba(51, 170, 51, 0.1);
+      // opacity: 0.2;
+      @include flexbox-config($justify-content: center, $align-items: center);
+    }
+  }
+  .navListItem {
+    color: $white;
+    margin: 0 1em;
+    list-style: none;
+    cursor: pointer;
+
+    &:after {
+      border: solid 1px $white;
+    }
+  }
+}

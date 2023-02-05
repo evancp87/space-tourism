@@ -1,5 +1,5 @@
 import React from "react";
-import CrewImg from "../CrewImg";
+import CrewImg from "../components/CrewImg";
 
 type Props = {};
 

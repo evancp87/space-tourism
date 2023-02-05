@@ -1,5 +1,5 @@
 import React from "react";
-import CrewImg from "../components/CrewImg.tsx";
+import CrewImg from "../components/CrewImg";
 type Props = {};
 
 function Crew({}: Props) {

@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+// indicators
+// tech buttons
+.exploreBtn {
+  margin-top: 3rem;
+  padding: 2rem;
+  width: 150px;
+  height: 150px;
+  color: $black;
+}

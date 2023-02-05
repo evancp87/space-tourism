@@ -2,12 +2,13 @@ import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
-function Sidebar(props) {
+function Sidebar(props: boolean) {
   return (
     <aside
-      className={classnames("sidebar", {
-        active: props.openSidebar,
-      })}
+    //   className={classnames("sidebar", {
+    //     active: props.openSidebar,
+    //   })
+    // }
     >
       <ul className="sidebar__nav">
         <li className="sidebar__nav-item">Collections</li>
