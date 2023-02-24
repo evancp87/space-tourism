@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-// import Image from 'next/image'
+import Image from 'next/image'
 // import Overlay from '../components/Overlay'
 // import Sidebar from '../components/Sidebar'
 import styles from '../styles/components/nav.module.scss'
-import Burger from '../public/assets/shared/icon-hamburger.svg'
-import Logo from '../public/assets/shared/logo.svg'
-import Close from '../public/assets/shared/icon-close.svg'
+import burger from '../public/assets/shared/icon-hamburger.svg'
+import logo from '../public/assets/shared/logo.svg'
+import close from '../public/assets/shared/icon-close.svg'
 
 type Props = {}
 
@@ -28,18 +28,45 @@ function Nav({}: Props) {
 
   return (
     <nav className={styles.nav}>
-      <Logo className={styles.logo} />
-
+      <Image
+        src={logo}
+        alt="logo"
+        className={styles.logo}
+        width="50"
+        height="50"
+      />
       <div className={styles.hamburgerContainer}>
-        <Burger className={styles.hamburger} />
-        <Close className={styles.closeMenu} />
+        <Image
+          src={burger}
+          alt="hamburger icon"
+          className={styles.hamburger}
+          width="30"
+          height="30"
+        />
+        <Image
+          src={close}
+          alt="close icon"
+          className={styles.closeMenu}
+          width="30"
+          height="30"
+        />
       </div>
 
       <ul className={styles.navList}>
-        <li className={styles.navListItem}>00 Home</li>
-        <li className={styles.navListItem}>01 Destination</li>
-        <li className={styles.navListItem}>02 Crew</li>
-        <li className={styles.navListItem}>03 Technology</li>
+        <div className={styles.hr}></div>
+
+        <li className={styles.navListItem}>
+          <span className={styles.navListItemNo}>00</span> Home
+        </li>
+        <li className={styles.navListItem}>
+          <span className={styles.navListItemNo}>01</span> Destination
+        </li>
+        <li className={styles.navListItem}>
+          <span className={styles.navListItemNo}>02</span> Crew
+        </li>
+        <li className={styles.navListItem}>
+          <span className={styles.navListItemNo}>03</span> Technology
+        </li>
       </ul>
 
       {/* {openSidebar && <Sidebar openSidebar={openSidebar} />}

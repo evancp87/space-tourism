@@ -1,36 +1,43 @@
-import React from "react";
-import TechImg from "../components/TechImg";
-type Props = {};
+import React from 'react'
+import TechImg from '../components/TechImg'
+import styles from '../styles/components/technology.module.scss'
+
+type Props = {}
 
 function Technology({}: Props) {
   return (
-    <section>
-      <h1>03 Space launch 101</h1>
-
-      <TechImg />
-      <ul>
-        <li>Planets</li>
-      </ul>
-      <h2> Current Planet</h2>
-      <p> Current planet text</p>
-
-      <ul>
-        <li> Avg. distance</li>
-        <li>Est. travel time 3 years</li>
-      </ul>
-
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
-
-      <h2>The terminology...</h2>
-      <h3>vehicle.name</h3>
-
-      <p>vehicle.text</p>
+    <section className={styles.container}>
+      <div className={styles.headerContainer}>
+        <h1 className={styles.header}>
+          {' '}
+          <span>03</span> Space launch 101
+        </h1>
+      </div>
+      {/* <div> */}
+      <div className={styles.mainSection}>
+        <TechImg />
+        <div className={styles.text}>
+          <ul className={styles.navigators}>
+            <li className={styles.navigatorsItems}>1</li>
+            <li className={styles.navigatorsItems}>2</li>
+            <li className={styles.navigatorsItems}>3</li>
+          </ul>
+          <div className={styles.textContainer}>
+            <h2 className={styles.terminology}>The Terminology...</h2>
+            <h3 className={styles.technologyType}>a launch Vehicle</h3>
+            <p className={styles.techBlurb}>
+              A launch vehicle or carrier rocket is a rocket-propelled vehicle
+              used to carry a payload from Earth's surface to space, usually to
+              Earth orbit or beyond. Our WEB-X carrier rocket is the most
+              powerful in operation. Standing 150 metres tall, it's quite an
+              awe-inspiring sight on the launch pad!
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* </div> */}
     </section>
-  );
+  )
 }
 
-export default Technology;
+export default Technology

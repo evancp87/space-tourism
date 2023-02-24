@@ -1,10 +1,18 @@
 import React from 'react'
+import styles from '../styles/components/sub-nav.module.scss'
 
 type Props = {}
 
 function SubNav({}: Props) {
   return (
-    <div>SubNav</div>
+    <nav className={styles.subNav}>
+      <ul className={styles.subNavList}>
+        <li className={styles.subNavListItem}>Moon</li>
+        <li className={styles.subNavListItem}>Mars</li>
+        <li className={styles.subNavListItem}>Europa</li>
+        <li className={styles.subNavListItem}>Titan</li>
+      </ul>
+    </nav>
   )
 }
 

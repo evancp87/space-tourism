@@ -1,27 +1,37 @@
-import React from "react";
-import classnames from "classnames";
-import PropTypes from "prop-types";
+import React from 'react'
+import classnames from 'classnames'
+import PropTypes from 'prop-types'
+import styles from '../styles/components/sidebar.module.scss'
 
 function Sidebar(props: boolean) {
   return (
     <aside
-    //   className={classnames("sidebar", {
-    //     active: props.openSidebar,
-    //   })
-    // }
+      className={styles.sidebar}
+      //   className={classnames("sidebar", {
+      //     active: props.openSidebar,
+      //   })
+      // }
     >
-      <ul className="sidebar__nav">
-        <li className="sidebar__nav-item">Collections</li>
-        <li className="sidebar__nav-item">Men</li>
-        <li className="sidebar__nav-item">Women</li>
-        <li className="sidebar__nav-item">About</li>
-        <li className="sidebar__nav-item">Contact</li>
+      <ul className={styles.sidebarList}>
+        <li className={styles.sidebarItem}>
+          <span className={styles.sidebarItemNo}>00</span> Home
+        </li>
+        <span className={styles.sidebarItemNo}> </span>{' '}
+        <li className={styles.sidebarItem}>
+          <span className={styles.sidebarItemNo}>01</span> Destination
+        </li>
+        <li className={styles.sidebarItem}>
+          <span className={styles.sidebarItemNo}>02</span> Crew
+        </li>
+        <li className={styles.sidebarItem}>
+          <span className={styles.sidebarItemNo}>03</span> Technology
+        </li>
       </ul>
     </aside>
-  );
+  )
 }
 Sidebar.propTypes = {
   openSidebar: PropTypes.bool,
-};
+}
 
-export default Sidebar;
+export default Sidebar
