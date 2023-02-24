@@ -1,0 +1,192 @@
+@use '../abstracts/' as *;
+
+.container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: {
+    image: url('../../public/assets/technology/background-technology-mobile.jpg');
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+  @include flexbox-config(
+    $flex-direction: column,
+    $align-items: center,
+    $justify-content: center
+  );
+
+  @include xs-tablets {
+    background-image: url('../../public/assets/technology/background-technology-tablet.jpg');
+  }
+
+  @include sm-desktop {
+    background-image: url('../../public/assets/technology/background-technology-desktop.jpg');
+    flex-direction: column;
+  }
+
+  .header {
+    text-transform: uppercase;
+    color: $white;
+    font-size: $titleText;
+    display: flex;
+    margin: 2rem 0;
+    letter-spacing: 3.38px;
+    @include xs-tablets {
+      align-self: flex-start;
+      padding-left: 2em;
+    }
+
+    @include sm-desktop {
+      padding-left: 4em;
+    }
+
+    > span {
+      color: grey;
+      margin-right: 1rem;
+    }
+  }
+
+  .imgContainer {
+    flex: 0 2 100%;
+    width: 100%;
+    @include sm-desktop {
+      order: 2;
+    }
+    .techImg {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      width: 100%;
+      @include sm-desktop {
+        display: none;
+      }
+    }
+
+    .techImgPortrait {
+      display: none;
+      @include sm-desktop {
+        display: flex;
+        height: auto;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .text {
+    flex: 1 1 100%;
+    @include flexbox-config(
+      $flex-direction: column,
+      $align-items: center,
+      $justify-content: center
+    );
+    order: 2;
+    @include sm-desktop {
+      flex-direction: row;
+      order: 1;
+    }
+  }
+}
+
+.textContainer {
+  margin-top: 1rem;
+  @include flexbox-config(
+    $flex-direction: column,
+    $align-items: center,
+    $justify-content: center
+  );
+  @include sm-desktop {
+    margin-top: 0px;
+    align-items: flex-start;
+    max-width: 60%;
+    // @include flexbox-config(
+    //   $flex-direction: column,
+    //   $align-items: center,
+    //   $justify-content: center
+    // );
+  }
+  .terminology {
+    font-size: clamp(0.875rem, 0.844rem + 0.179vw, 1rem);
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+    color: $lilac;
+  }
+
+  .technologyType {
+    font-size: clamp(1.5rem, 1rem + 2.857vw, 3.5rem);
+    font-weight: 400;
+    font-family: 'Bellefair', serif;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0.6em 0;
+  }
+  .techBlurb {
+    font-weight: 400;
+    color: $lilac;
+    font-size: clamp(0.938rem, 0.891rem + 0.268vw, 1.125rem);
+    max-width: clamp(300px, 0.891rem + 0.268vw, 500px);
+    @include sm-desktop {
+      max-width: 100%;
+    }
+  }
+}
+.headerContainer {
+  @include flexbox-config($flex-direction: column, $align-items: center);
+  @include xs-tablets {
+    align-self: flex-start;
+  }
+}
+
+.mainSection {
+  width: 100%;
+  @include sm-desktop {
+    @include flexbox-config(
+      $flex-direction: row,
+      $align-items: center,
+      $justify-content: center
+    );
+  }
+}
+
+.navigators {
+  margin-top: 2rem;
+  @include flexbox-config(
+    $flex-direction: row,
+    $align-items: center,
+    $justify-content: center
+  );
+  @include sm-desktop {
+    flex-direction: column;
+    margin-top: 0;
+    margin-right: 5em;
+  }
+  .navigatorsItems {
+    margin: 0.6em;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    padding: 1.2rem;
+    border: 1px solid grey;
+    border-radius: 50%;
+    &:hover {
+      border: 1px solid $white;
+    }
+    &:active {
+      background-color: $white;
+      color: $black;
+    }
+  }
+}
+.dataList {
+  @include flexbox-config(
+    $flex-direction: column,
+    $align-items: center,
+    $justify-content: center
+  );
+  @include xs-tablets {
+    flex-direction: row;
+  }
+  .dataListItem {
+    color: currentColor;
+  }
+}

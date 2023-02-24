@@ -1,0 +1,151 @@
+@use '../abstracts/' as *;
+
+.destination {
+  min-height: 100vh;
+  // 100svh;
+  // 100dvh;
+  background: {
+    image: url('../../public/assets/destination/background-destination-mobile.jpg');
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+
+  @include flexbox-config($flex-direction: column, $align-items: center);
+
+  @include xs-tablets {
+    background-image: url('../../public/assets/destination/background-destination-tablet.jpg');
+  }
+
+  @include sm-desktop {
+    background-image: url('../../public/assets/destination/background-destination-desktop.jpg');
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header {
+    text-transform: uppercase;
+    color: $white;
+    letter-spacing: 4.72px;
+    font-size: $titleText;
+    margin: 2rem 0;
+    font-size: clamp(1rem, 0.813rem + 1.071vw, 1.75rem);
+    @include xs-tablets {
+      align-self: flex-start;
+      padding-left: 2em;
+    }
+
+    > span {
+      color: grey;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.container {
+  @include flexbox-config($flex-direction: column, $align-items: center);
+
+  @include sm-desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5em;
+    grid-auto-rows: auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .planetImg {
+    display: block;
+    height: auto;
+    margin-bottom: 0.5rem;
+    width: clamp(10.625rem, 6.328rem + 24.554vw, 27.813rem);
+    height: clamp(10.625rem, 6.328rem + 24.554vw, 27.813rem);
+  }
+  .textContainer {
+    @include flexbox-config($flex-direction: column, $align-items: center);
+    @include sm-desktop {
+      align-items: baseline;
+    }
+    .text {
+      @include flexbox-config(
+        $flex-direction: column,
+        $align-items: center,
+        $justify-content: center
+      );
+      padding: 1rem;
+      @include xs-tablets {
+        padding: 0;
+      }
+      .planetHeading {
+        text-transform: uppercase;
+        font-family: 'Bellefair', serif;
+        font-weight: 400;
+        font-size: clamp(3.5rem, 2.813rem + 3.929vw, 6.25rem);
+        @include sm-desktop {
+          align-self: flex-start;
+        }
+      }
+      .planetText {
+        text-align-last: center;
+        max-width: 20em;
+        font-size: $body-text;
+        margin: 1em 0;
+        color: var(--lilac-not-active-color);
+        padding-bottom: 2em;
+        border-bottom: 0.1px solid currentColor;
+      }
+    }
+
+    @include sm-desktop {
+    }
+  }
+
+  .planetList {
+    @include flexbox-config(
+      $flex-direction: row,
+      // $align-items: center,
+      // $justify-content: center
+    );
+
+    .planetListItem {
+      color: currentColor;
+    }
+  }
+}
+
+.planetFacts {
+  text-transform: uppercase;
+  @include flexbox-config(
+    $flex-direction: column,
+    $align-items: center,
+    $justify-content: center
+  );
+
+  .dataList {
+    margin-bottom: 2rem;
+    @include flexbox-config($flex-direction: row);
+    .dataListItem {
+      color: $lilac;
+      letter-spacing: 2.36px;
+      margin: 1em 0;
+      font-size: $subHeadingTwo;
+      @include flexbox-config(
+        $flex-direction: column,
+        $align-items: center,
+        $justify-content: center
+      );
+      @include xs-tablets {
+        margin-right: 1em;
+      }
+      .value {
+        margin-top: 0.5em;
+        color: $white;
+        font-size: 28px;
+        letter-spacing: 0;
+        @include sm-desktop {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}

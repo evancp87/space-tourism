@@ -1,0 +1,42 @@
+@use '../abstracts/' as a;
+// @use '../base/' as b;
+
+.subNav {
+  margin: 1rem;
+  .subNavList {
+    @include a.flexbox-config($flex-direction: row);
+    .subNavListItem {
+      color: var(--lilac-not-active-color);
+      text-transform: uppercase;
+      letter-spacing: 2.36px;
+      cursor: pointer;
+      font-size: a.$sub-nav;
+      font-weight: 400;
+      transition: color 0.5s ease-in-out;
+      margin: 0 1rem;
+      padding-bottom: 1em;
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 5px;
+        // background-color: white;
+        background: var(--active-color);
+        transition: width 0.3s;
+        margin-top: 2em;
+      }
+
+      &:hover {
+        color: var(--active-color);
+      }
+    }
+  }
+}
+
+.subNavListItem:hover:after {
+  width: 100px;
+}

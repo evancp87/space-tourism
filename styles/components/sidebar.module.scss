@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .sidebar {
   width: 70vw;
@@ -8,25 +8,28 @@
   padding: 5rem 0 0 1rem;
   top: 0;
   bottom: 0;
-  left: -100%;
+  right: -100%;
   transition: all ease-in-out 1s;
-  background-color: $white;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
 
   @include sm-tablets {
     display: none;
   }
-  .sidebar__nav {
-    .sidebar__nav-item {
-      color: $black;
-      // font-size: $sidebar;
-      font-weight: 600;
-      margin-bottom: 1em;
+  .sidebarList {
+    .sidebarItem {
+      color: $lilac;
+      margin-top: 1rem;
+      .sidebarItemNo {
+        color: $white;
+        margin-right: 1em;
+      }
     }
   }
 }
 
 .sidebar.active {
-  left: 0;
+  right: 10px;
   animation: 0.5s ease-in-out slide-in;
 }
 

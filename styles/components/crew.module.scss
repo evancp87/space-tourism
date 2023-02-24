@@ -1,0 +1,188 @@
+@use '../abstracts/' as *;
+
+.container {
+  min-height: 100vh;
+  background: {
+    image: url('../../public/assets/crew/background-crew-mobile.jpg');
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+  // flex-wrap: wrap;
+  @include flexbox-config(
+    $flex-direction: column,
+    $align-items: center,
+    // $justify-content: center
+  );
+
+  @include xs-tablets {
+    background-image: url('../../public/assets/crew/background-crew-tablet.jpg');
+    // flex-wrap: wrap-reverse;
+  }
+
+  @include sm-desktop {
+    background-image: url('../../public/assets/crew/background-crew-desktop.jpg');
+    // flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .header {
+    text-transform: uppercase;
+    color: $white;
+    letter-spacing: 4.72px;
+    font-size: $titleText;
+    margin: 2rem 0;
+    @include xs-tablets {
+      align-self: flex-start;
+      padding-left: 2em;
+    }
+    @include sm-desktop {
+      // padding-left: 7.8em;
+    }
+
+    > span {
+      color: $gray;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.position {
+  font-size: $crew-position;
+  text-transform: uppercase;
+  color: $gray;
+  font-family: 'Bellefair', serif;
+  font-weight: 400;
+}
+
+.name {
+  font-size: $crew-name;
+  text-transform: uppercase;
+  color: $white;
+  max-width: 100%;
+  font-family: 'Bellefair', serif;
+  font-weight: 400;
+  white-space: nowrap;
+  margin-bottom: 0.5em;
+}
+
+.blurb {
+  font-size: $body-text;
+  padding: 1em 1.2em;
+  color: $lilac;
+  @include sm-desktop {
+    padding: 0;
+    max-width: 75%;
+  }
+}
+
+.imgContainer {
+  // order: 1;
+  // width: 50%;
+  flex: 0 2 auto;
+  border-bottom: 0.1px solid white;
+  /* padding-bottom: 1em; */
+  // width: calc(100vw - 10%);
+  @include flexbox-config($justify-content: center);
+  // position: relative;
+  .crewImg {
+    display: block;
+    height: auto;
+    // max-width: 100%;
+    width: clamp(10.438rem, 5.672rem + 21.518vw, 35.5rem);
+
+    @include xs-tablets {
+      // position: absolute;
+      bottom: 0%;
+      // width: 456px;
+    }
+
+    @include md-tablets {
+      bottom: -10%;
+    }
+
+    @include sm-desktop {
+      bottom: 0;
+    }
+  }
+  @include xs-tablets {
+    border-bottom: none;
+  }
+}
+
+.textContainer {
+  padding: 0 1em;
+  // order: 2;
+  // max-width: clamp(25rem, 20.313rem + 26.786vw, 43.75rem);
+  // max-width: clamp(25rem, 20.313rem + 9.786vw, 43.75rem);
+  @include flexbox-config(
+    $flex-direction: row,
+    $align-items: center,
+    $justify-content: center
+  );
+  flex-wrap: wrap;
+
+  @include xs-tablets {
+    // order: 1;
+    padding: 0;
+    flex-direction: column;
+  }
+  @include lg-tablets-max-width {
+    flex-wrap: wrap-reverse;
+  }
+  @include sm-desktop {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 1000px;
+    align-items: flex-start;
+  }
+
+  .text {
+    flex: 1 1 auto;
+    max-width: clamp(25rem, 20.313rem + 9.786vw, 43.75rem);
+
+    margin-top: 3em;
+    @include flexbox-config(
+      $flex-direction: column,
+      $align-items: center,
+      $justify-content: center
+    );
+    @include sm-desktop {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+}
+
+.indicatorList {
+  margin-bottom: 1em;
+  @include flexbox-config(
+    $flex-direction: row,
+    $align-items: center,
+    $justify-content: center
+  );
+  @include xs-tablets {
+    order: 2;
+  }
+
+  @include sm-desktop {
+    margin-bottom: 0;
+    margin-top: 15rem;
+  }
+
+  .indicators {
+    width: 15px;
+    height: 15px;
+    background-color: $gray;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: {
+      left: clamp(0.625rem, 0.547rem + 0.446vw, 0.938rem);
+      right: clamp(0.625rem, 0.547rem + 0.446vw, 0.938rem);
+    }
+    &:hover {
+      background-color: $white;
+    }
+  }
+}

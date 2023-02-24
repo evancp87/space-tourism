@@ -4,6 +4,7 @@
   width: 100vw;
   height: 100px;
   display: flex;
+  position: relative;
   background-color: transparent;
   @include flexbox-config(
     $justify-content: space-between,
@@ -37,6 +38,20 @@
   }
 }
 
+.hr {
+  display: none;
+  @include sm-desktop {
+    position: absolute;
+    z-index: 500;
+    display: block;
+    background-color: #979797;
+    width: 60%;
+    height: 1px;
+    left: -49%;
+    line-height: 80%;
+  }
+}
+
 .navList {
   display: none;
   position: absolute;
@@ -46,12 +61,13 @@
   bottom: 0;
   width: calc(100vw - 40%);
   min-height: 100vh;
-  @include flexbox-config(
-    $flex-direction: column,
-    $justify-content: center,
-    $align-items: center
-  );
+  background-color: black;
   @include xs-tablets {
+    @include flexbox-config(
+      $flex-direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
     position: relative;
     width: calc(100vw - 40%);
     height: 100%;
@@ -60,19 +76,44 @@
     @include xs-tablets {
       // background-color: $nav-bg;
       // background-color: #0b0d17;
-      background: rgba(51, 170, 51, 0.1);
+      background-color: rgba(51, 170, 51, 0.1);
       // opacity: 0.2;
       @include flexbox-config($justify-content: center, $align-items: center);
     }
   }
   .navListItem {
     color: $white;
+    text-transform: uppercase;
     margin: 0 1em;
     list-style: none;
+    display: flex;
+    font-weight: 700;
+    letter-spacing: 2.7px;
     cursor: pointer;
 
     &:after {
-      border: solid 1px $white;
+      content: '';
+      display: block;
+      width: 0;
+      height: 5px;
+      background: $white;
+      transition: width 0.3s;
+      margin-top: 2em;
+    }
+    .navListItemNo {
+      // @include lg-tablets-max-width {
+      display: none;
+      // }
+      @include sm-desktop {
+        display: block;
+        color: $white;
+        margin-right: 1em;
+        font-weight: 400;
+      }
     }
   }
+}
+
+.navListItem:hover:after {
+  width: 100%;
 }
