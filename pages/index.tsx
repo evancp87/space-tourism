@@ -8,10 +8,52 @@ import Nav from '../components/Nav'
 import Sidebar from '../components/Sidebar'
 import Technology from '../pages/Technology'
 import Crew from '../pages/Crew'
+import React, { useState, useEffect, useContext } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const { setData, setPlanets, setCurrPlanet }: any = useContext(PlanetsContext)
+  useEffect(() => {
+    fetch('../../data.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data)
+        setPlanets(data.map((planet) => planet.name))
+        setCurrPlanet('Mercury')
+      })
+  }, [])
+
+  // const {
+  //   name,
+  //   overview,
+  //   structure,
+  //   geology,
+  //   rotation,
+  //   revolution,
+  //   radius,
+  //   temperature,
+  //   images,
+  // } = planet;
+
+  const changePlanet = (currPlanet: String) => {
+    const { name, images, description, travel } = destination
+
+    const { name, images, role, bio } = crew
+
+    const { name, images, description } = technology
+
+    if (name === currPlanet) {
+      setCurrPlanet(name)
+      setData()
+      setPlanets()
+      setCrew()
+      setTechnology()
+    }
+  }
+
+  // when name is chosen
+
   return (
     <>
       <Head>
