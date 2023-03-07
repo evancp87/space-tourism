@@ -95,6 +95,9 @@
     @include xs-tablets {
       // position: absolute;
       bottom: 0%;
+      // TODO: experiment with logical properties
+      // bottom: inset-block-end
+      // right
       // width: 456px;
     }
 

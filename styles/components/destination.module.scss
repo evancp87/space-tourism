@@ -2,6 +2,8 @@
 
 .destination {
   min-height: 100vh;
+  // TODO: experiment with logical properties
+  // min-block-size: 100vh;
   // 100svh;
   // 100dvh;
   background: {
@@ -29,10 +31,13 @@
     letter-spacing: 4.72px;
     font-size: $titleText;
     margin: 2rem 0;
+    // margin-block: 2rem;
     font-size: clamp(1rem, 0.813rem + 1.071vw, 1.75rem);
     @include xs-tablets {
       align-self: flex-start;
       padding-left: 2em;
+      // TODO: experiment with logical properties
+      // padding-inline-start: 2em;
     }
 
     > span {
@@ -57,6 +62,8 @@
   .planetImg {
     display: block;
     height: auto;
+    // TODO: experiment with logical properties
+    // block-size: auto;
     margin-bottom: 0.5rem;
     width: clamp(10.625rem, 6.328rem + 24.554vw, 27.813rem);
     height: clamp(10.625rem, 6.328rem + 24.554vw, 27.813rem);
@@ -87,6 +94,8 @@
       }
       .planetText {
         text-align-last: center;
+        // TODO: experiment with logical properties
+        // max-inline-size: 20em;
         max-width: 20em;
         font-size: $body-text;
         margin: 1em 0;
