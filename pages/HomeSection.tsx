@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from '../components/Nav'
 import styles from '../styles/components/home.module.scss'
+import Link from 'next/link'
 type Props = {}
 
 function HomeSection({}: Props) {
@@ -19,7 +20,9 @@ function HomeSection({}: Props) {
           </p>
         </div>
         <div className={styles.exploreBtnContainer}>
-          <button className={styles.exploreBtn}>Explore</button>
+          <button className={styles.exploreBtn}>
+            <Link href="/Destination">Explore</Link>
+          </button>
         </div>
       </section>
     </>

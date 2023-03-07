@@ -6,6 +6,7 @@ import styles from '../styles/components/nav.module.scss'
 import burger from '../public/assets/shared/icon-hamburger.svg'
 import logo from '../public/assets/shared/logo.svg'
 import close from '../public/assets/shared/icon-close.svg'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -56,16 +57,20 @@ function Nav({}: Props) {
         <div className={styles.hr}></div>
 
         <li className={styles.navListItem}>
-          <span className={styles.navListItemNo}>00</span> Home
+          <span className={styles.navListItemNo}>00</span>{' '}
+          <Link href="/..HomeSection/">Home</Link>{' '}
         </li>
         <li className={styles.navListItem}>
-          <span className={styles.navListItemNo}>01</span> Destination
+          <span className={styles.navListItemNo}>01</span>{' '}
+          <Link href="/../Destination">Destination</Link>{' '}
         </li>
         <li className={styles.navListItem}>
-          <span className={styles.navListItemNo}>02</span> Crew
+          <span className={styles.navListItemNo}>02</span>
+          <Link href="/../Crew"> Crew</Link>{' '}
         </li>
         <li className={styles.navListItem}>
-          <span className={styles.navListItemNo}>03</span> Technology
+          <span className={styles.navListItemNo}>03</span>{' '}
+          <Link href="/../Technology">Technology</Link>{' '}
         </li>
       </ul>
 
